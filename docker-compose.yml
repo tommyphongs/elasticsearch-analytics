@@ -1,0 +1,32 @@
+version: '2.2'
+services:
+  node1:
+    image: ccr.itim.vn/bi/bi-elasticsearch:1.1_7.10.1
+    container_name: node1
+    environment:
+      - node.name=node1
+      - cluster.name=coccoc-bi
+      - discovery.seed_hosts=node1
+      - cluster.initial_master_nodes=node1
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - data1:/home/phongnh/data/elasticsearch/data
+    ports:
+      - 9200:9200
+      - 9300:9300
+    networks:
+      - elastic
+
+
+volumes:
+  data1:
+    driver: local
+
+networks:
+  elastic:
+    driver: bridge
