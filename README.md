@@ -1,6 +1,14 @@
-#Elastic utils, include plugins
+# Elasticsearch utils
+Contains the analytics plugins that offers Elasticsearch
+plugins for analyzing and processing massive amounts of 
+data in the Elasticsearch ecosystem, It provides a means
+to add flexible business logic to Elasticsearch and make 
+Elasticsearch to become powerful analytics system
 
-## Query join
+## Elasticsearch plugins
+This project include below Elasticsearch plugin:
+* Data retention
+* Cardinality
 
 ##Cohort retention
 
